@@ -1,0 +1,31 @@
+@use './container' as *;
+@use '../abstracts' as *;
+
+header {
+  @include container();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+
+    a {
+      color: $clr-primary;
+
+      // & + & {
+      //   margin-left: 1em;
+      // }
+    }
+  }
+}
+
+header {
+  button {
+    display: none;
+  }
+}

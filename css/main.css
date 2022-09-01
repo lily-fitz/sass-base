@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-top: 14px;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 4.5vw, 3.375rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(2rem, 2.75vw, 2.25rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+h5 {
+  font-size: clamp(1.25rem, 2.25vw, 1.5rem);
+}
+
+h6 {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+}
+
+.fs-text {
+  font-size: 15px;
+}
+
+.accent {
+  display: block;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.ft-accent, .ft-accent-md, .ft-accent-sm, .ft-accent-primary {
+  font-weight: 400;
+  font-family: "Inconsolata", monospace;
+}
+.ft-accent-primary {
+  color: rgb(63, 0, 250);
+}
+.ft-accent-sm {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+}
+.ft-accent-md {
+  font-size: clamp(1.25rem, 2.25vw, 1.5rem);
+}
+
+.tiny-info {
+  font-size: 13px;
+  /* max-width: 47ch; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #0c0c0c;
+  background-color: #fcfcfc;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: rgb(63, 0, 250);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1,
+h2 {
+  line-height: 1.1;
+}
+
+h3,
+h4 {
+  line-height: 1.4;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+input,
+button,
+textarea,
+select {
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  line-height: 1em;
+  border: none;
+}
+
+.flex ul > li {
+  list-style: none;
+}
+
+/* reset user agent stylesheet chrome*/
+ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+/*  -------------------------------- */
+/*  Accessibility ------------------ */
+/*  -------------------------------- */
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1;
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.skip-to-content {
+  position: absolute;
+  z-index: 9999;
+  background: transparent;
+  color: white;
+  margin-inline: auto;
+  font-size: 0.875rem;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+}
+
+[class^=grid-] {
+  display: grid;
+}
+
+@media (min-width: 80rem) {
+  .grid-bg-header {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 56rem) and (max-width: 79.999rem) {
+  .grid-bg-header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-intro :is(h5, button) {
+  color: white;
+}
+
+section {
+  width: min(100% - 2rem, 40rem);
+  margin-inline: auto;
+}
+@media (min-width: 56rem) and (max-width: 79.999rem) {
+  section {
+    width: min(100% - 6rem, 60rem);
+    margin-inline: auto;
+  }
+}
+@media (min-width: 80rem) {
+  section {
+    width: min(100% - 6rem, 70rem);
+    margin-inline: auto;
+  }
+}
+
+section.full {
+  width: 100vw;
+}
+
+header {
+  width: min(100% - 2rem, 40rem);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 56rem) and (max-width: 79.999rem) {
+  header {
+    width: min(100% - 6rem, 60rem);
+    margin-inline: auto;
+  }
+}
+@media (min-width: 80rem) {
+  header {
+    width: min(100% - 6rem, 70rem);
+    margin-inline: auto;
+  }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+nav ul a {
+  color: rgb(63, 0, 250);
+}
+
+header button {
+  display: none;
+}
+
+button {
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  background-color: rgb(63, 0, 250);
+  border-radius: 10px;
+}
+
+.icon::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+label {
+  display: block;
+  text-align: left;
+}
+
+input {
+  border: solid 2px rgb(63, 0, 250);
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+input + button {
+  margin-left: 10px;
+}
+
+.input-button {
+  display: flex;
+}
+
+.grid-intro {
+  gap: 3rem;
+}
+.grid-intro .intro-top {
+  padding-top: clamp(4rem, 26vw, 12rem);
+  padding-bottom: clamp(4rem, 14vw, 10rem);
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.grid-intro h2 {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+}
+@media only screen and (min-width: 40rem) {
+  .grid-intro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-intro .intro-top {
+    grid-column: 1/3;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .grid-intro .intro-top__heading {
+    flex-basis: 46%;
+  }
+  .grid-intro .intro-top__newsletter {
+    align-self: flex-end;
+    flex-basis: 44%;
+  }
+  .grid-intro .intro__info-three {
+    grid-column: 1/3;
+  }
+}
+@media only screen and (min-width: 60rem) {
+  .grid-intro {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-intro .intro-top {
+    grid-column: 1/4;
+  }
+  .grid-intro .intro__info-three {
+    grid-column: 3/4;
+  }
+}
+
+.banner {
+  width: 100vw;
+  background-color: dodgerblue;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.grid-banner {
+  min-height: 6vh;
+  place-items: center;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,25 @@
+// @each $color, $shades in $colors {
+//     @each $shade, $value in $shades {
+//         --clr-#{$color}-#{$shade}: #{$value};
+//         //if getting value directly
+//         //color: $shades;
+//     }
+// }
+
+// @each $color, $shades in $colors {
+//     @each $shade, $value in $shades {
+//         .text-#{$color}-#{$shade} {
+//             color: $value;
+//             //color: var(--fs-#{$color}-#{$shade};
+//         }
+//     }
+// }
+
+// $bg: #2a2a2a;
+// $text: #fafafa;
+
+$bg: #fcfcfc;
+$text: #0c0c0c;
+$clr-primary: rgb(63, 0, 250);
+$white: #fff;
+$black: #000;

@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+button {
+  color: $white;
+  padding: 0.75rem 1.25rem;
+  background-color: $clr-primary;
+  border-radius: $br;
+}
+
+// @mixin hover-btn() {
+//   transition: transform 350ms ease-in-out;
+//   box-shadow: 0 0.25 0.5em 0 rgba(black, 0.2);
+
+//   @include pseudo($loc: after) {
+//     box-shadow: 0 0 1.25em 0 rgba(black, 0.4);
+//     opacity: 0;
+//   }
+
+//   &:hover,
+//   &:focus {
+//     transform: scale(1.05);
+
+//     &::after {
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// @mixin hover-btn() {
+//     //transition: transform $speed ease-in-out;
+//     transition: transform 350ms ease-in-out;
+//     box-shadow: 0 0.25 0.5em 0 rgba(black, 0.2);
+
+//     @include after() {
+//         box-shadow: 0 0 1.25em 0 rgba(black, 0.4);
+//         opacity: 0;
+//     }
+
+//     &:hover,
+//     &:focus {
+//         transform: scale(1.05);
+
+//         &::after {
+//             opacity: 1;
+//         }
+//     }
+// }

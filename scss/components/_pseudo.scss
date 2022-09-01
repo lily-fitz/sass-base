@@ -1,0 +1,54 @@
+//standard
+@mixin before() {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+  }
+}
+
+//if needed content
+@mixin after($content: '', $pos: absolute) {
+  position: relative;
+
+  &:after {
+    content: $content;
+    position: $pos;
+    @content;
+  }
+}
+
+//if needed content, with interpolation (could work as before or after)
+// @mixin pseudo($loc: before, $content: '', $pos: absolute, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+//     position: relative;
+
+//     &::#{$loc} {
+//         content: $content;
+//         position: $pos;
+//         top: $top;
+//         right: $right;
+//         bottom: $bottom;
+//         left: $left;
+//         @content;
+//     }
+// }
+
+@mixin pseudo() {
+  position: relative;
+  z-index: -1;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    inset: 0 0 0 0;
+    @content;
+  }
+
+  div > * {
+    z-index: 2;
+  }
+}

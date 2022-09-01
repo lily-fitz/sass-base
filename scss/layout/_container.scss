@@ -1,0 +1,40 @@
+@use '../layout/grid' as *;
+@use '../abstracts' as *;
+@use '../components/pseudo' as *;
+
+@mixin container-full {
+  width: 100vw;
+}
+
+@mixin container {
+  width: min(100% - 2rem, 40rem);
+  margin-inline: auto;
+
+  @media (min-width: 56rem) and (max-width: 79.999rem) {
+    width: min(100% - 6rem, 60rem);
+    margin-inline: auto;
+  }
+
+  @media (min-width: 80rem) {
+    width: min(100% - 6rem, 70rem);
+    margin-inline: auto;
+  }
+}
+
+@mixin pad-vertical-inline {
+  padding-top: clamp(4rem, 20vw, 12rem);
+  padding-bottom: clamp(4rem, 20vw, 12rem);
+}
+
+@mixin pad-vertical-inline-top {
+  padding-top: clamp(4rem, 26vw, 12rem);
+  padding-bottom: clamp(4rem, 14vw, 10rem);
+}
+
+section {
+  @include container();
+}
+
+section.full {
+  @include container-full();
+}

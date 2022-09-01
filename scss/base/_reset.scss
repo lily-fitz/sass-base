@@ -1,0 +1,124 @@
+@use '../abstracts' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $text;
+  background-color: $bg;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  font-family: $ff;
+
+  overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: $clr-primary;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1,
+h2 {
+  line-height: 1.1;
+}
+
+h3,
+h4 {
+  line-height: 1.4;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+input,
+button,
+textarea,
+select {
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  line-height: 1em;
+  border: none;
+}
+
+.flex ul > li {
+  list-style: none;
+}
+
+/* reset user agent stylesheet chrome*/
+
+ul {
+  padding-inline-start: 0;
+}
+
+/*  -------------------------------- */
+/*  Accessibility ------------------ */
+/*  -------------------------------- */
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.skip-to-content {
+  position: absolute;
+  z-index: 9999;
+  background: transparent;
+  color: white;
+  margin-inline: auto;
+  font-size: 0.875rem;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+}

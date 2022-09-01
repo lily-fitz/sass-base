@@ -1,0 +1,112 @@
+//////////
+//responsive grids
+//////////
+
+$gap: 3rem;
+
+[class^='grid-'] {
+  display: grid;
+}
+
+//3 col, 1 col, so use one or the other based on use case
+
+@mixin grid_3-1() {
+  @media (min-width: 80rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // @media (min-width: 56rem) and (max-width: 79.999rem) {
+  //     grid-template-columns: repeat(3, 1fr);
+  // }
+}
+
+//3 col, 2 col, 1 col (multiple of 3&2 i.e. 6)
+
+@mixin grid_3-2-1() {
+  @media (min-width: 80rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 56rem) and (max-width: 79.999rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+//3 col, 2 col + 1 col (100%), 1 col
+
+@mixin grid_3-2and1-1() {
+  @media (min-width: 80rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 56rem) and (max-width: 79.999rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  & > div:last-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+//4 col, 2 col, 1 col
+
+@mixin grid_4-2-1() {
+  @media (min-width: 80rem) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 56rem) and (max-width: 79.999rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+//2 col, 2 unequal col, 1 col
+
+@mixin grid_2-1to2-1() {
+  @media (min-width: 80rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 62rem) and (max-width: 79.999rem) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+//2 unequal col, 2 col, 1 col
+
+@mixin grid_1to2-2-1() {
+  @media (min-width: 80rem) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  @media (min-width: 56rem) and (max-width: 79.999rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+//2 unequal col, 2 col, 1 col
+
+@mixin grid_2to1() {
+  @media (min-width: 40rem) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 60rem) {
+    grid-template-columns: 2fr;
+  }
+}
+
+// @for $i from 1 through 12 {
+//     .col-#{$i} {
+//         flex: 0 0 (100% / (12 / $i));
+//     }
+// }
+
+.grid-bg-header {
+  @include grid_3-2-1();
+}
+
+.grid-intro :is(h5, button) {
+  color: white;
+}

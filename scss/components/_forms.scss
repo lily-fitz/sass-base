@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+label {
+  display: block;
+  text-align: left;
+}
+
+input {
+  border: solid 2px $clr-primary;
+  border-radius: $br;
+  padding: 0.5rem;
+  width: 100%;
+  //width: clamp(4rem, 60%, 18rem);
+}
+
+input + button {
+  margin-left: 10px;
+}
+
+.input-button {
+  display: flex;
+}
